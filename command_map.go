@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func commandMapf(cfg *config) error {
+func commandMapf(cfg *config, args ...string) error {
 	resp, err := cfg.pokeapiClient.ListLocationAreas(cfg.nextLocationAreaURL)
 	if err != nil {
 		return err
@@ -19,7 +19,7 @@ func commandMapf(cfg *config) error {
 	return nil
 }
 
-func commandMapb(cfg *config) error {
+func commandMapb(cfg *config, args ...string) error {
 	resp, err := cfg.pokeapiClient.ListLocationAreas(cfg.previousLocationAreaURL)
 	if err != nil {
 		return err
